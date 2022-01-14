@@ -14,6 +14,14 @@ namespace AddressBook
             personInfo.SetPersonInfo();
 
             personInfo.DisplayPersonInfo();
+            Console.WriteLine("You want to update info .... type yes or no");
+            if (Console.ReadLine().Equals("yes"))
+            {
+                Console.WriteLine("Enter Index no ");
+                int inNo=Int32.Parse(Console.ReadLine());
+                personInfo.UpdateInfo(inNo);
+                personInfo.DisplayPersonInfo();
+            }
         }
     }
 }
