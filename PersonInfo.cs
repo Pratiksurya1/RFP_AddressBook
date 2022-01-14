@@ -34,5 +34,13 @@ namespace AddressBook
 
             }
         }
+        public void DisplayPersonInfo()
+        {
+            Console.WriteLine("\n ============= Person Information =============\n");
+            for (int i=0; i < name.Count; i++)
+            {
+                Console.WriteLine("Index No : "+i+" Name :"+name[i]+ " Mobile No :"+mobailNo[i]+" Email ID :"+mail[i]+" Add :"+ addresses[i]);
+            }
+        }
     }
 }

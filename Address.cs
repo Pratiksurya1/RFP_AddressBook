@@ -9,7 +9,7 @@ namespace AddressBook
 {
     internal class AddressBook
     {
-        ArrayList addresses=new ArrayList();
+       public ArrayList addresses=new ArrayList();
         public void SetAddress()
         {
             Console.WriteLine("Enter City, state, zip");
