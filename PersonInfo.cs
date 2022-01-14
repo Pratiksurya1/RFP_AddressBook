@@ -70,5 +70,13 @@ namespace AddressBook
             }
 
         }
+        public int DeleteInfo(int indexNo)
+        {
+            name.RemoveAt(indexNo);
+            mobailNo.RemoveAt(indexNo);
+            mail.RemoveAt(indexNo);
+            addresses.RemoveAt(indexNo);
+            return 0;
+        }
     }
 }
