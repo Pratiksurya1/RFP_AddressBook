@@ -14,7 +14,7 @@ namespace AddressBook
             personInfo.SetPersonInfo();
 
             personInfo.DisplayPersonInfo();
-            Console.WriteLine("\n You want to update info .... update or delete info");
+            Console.WriteLine("\n You want to update info ...!! type update or delete info");
             String userDis=Console.ReadLine();
             if (userDis.Equals("update"))
             {

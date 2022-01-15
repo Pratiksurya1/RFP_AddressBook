@@ -42,31 +42,30 @@ namespace AddressBook
                 Console.WriteLine("Index No : "+i+" Name :"+name[i]+ " Mobile No :"+mobailNo[i]+" Email ID :"+mail[i]+" Add :"+ addresses[i]);
             }
         }
-        public void UpdateInfo(int p)
+        public void UpdateInfo(int indexNo)
         {
             Console.WriteLine("whitch information do you want to update");
             String upInfo=Console.ReadLine();
             if (upInfo.Equals("name"))
             {
                 Console.WriteLine("Enter new name :");
-                name[p]=Console.ReadLine();
+                name[indexNo] =Console.ReadLine();
             }
             else if (upInfo.Equals("mobile"))
             {
                 Console.WriteLine("Enter new mobile no :");
-                mobailNo[p] = Console.ReadLine();
+                mobailNo[indexNo] = Console.ReadLine();
 
             }
             else if (upInfo.Equals("email"))
             {
                 Console.WriteLine("Enter new Email ID :");
-                mail[p] = Console.ReadLine();
-
+                mail[indexNo] = Console.ReadLine();
             }
             else if (upInfo.Equals("add"))
             {
                 Console.WriteLine("Enter new address :");
-                addresses[p] = Console.ReadLine();
+                addresses[indexNo] = Console.ReadLine();
             }
 
         }
