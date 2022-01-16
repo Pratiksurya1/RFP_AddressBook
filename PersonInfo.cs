@@ -7,75 +7,26 @@ using System.Threading.Tasks;
 
 namespace AddressBook
 {
-    internal class PersonInfo : AddressBook
+    public class PersonInfo
     {
-        ArrayList name = new ArrayList();
-        ArrayList mobailNo = new ArrayList();
-        ArrayList mail = new ArrayList();
-        public void SetPersonInfo()
+
+        public String FName;
+        public String LName;
+        public long MobileNO;
+        public String MailID;
+        public String City;
+        public String State;
+        public long ZipCode;
+
+        public PersonInfo(String FName, String LName, long MobileNo, String MailID, String City, String State, long ZipCode)
         {
-            while (true)
-            {
-                Console.WriteLine("\n Enter person name :");
-                name.Add(Console.ReadLine());
-
-                Console.WriteLine("\n Enter person mobile number :");
-                mobailNo.Add(Console.ReadLine());
-
-                Console.WriteLine("\n Enter person Email ID :");
-                mail.Add(Console.ReadLine());
-
-                SetAddress();
-
-                Console.WriteLine("\n you want add anathar person yes or no :");
-                String check = Console.ReadLine();
-                if (check.Equals("no"))
-                    break;
-
-            }
-        }
-        public void DisplayPersonInfo()
-        {
-            Console.WriteLine("\n ============= Person Information =============\n");
-            for (int i=0; i < name.Count; i++)
-            {
-                Console.WriteLine("Index No : "+i+" Name :"+name[i]+ " Mobile No :"+mobailNo[i]+" Email ID :"+mail[i]+" Add :"+ addresses[i]);
-            }
-        }
-        public void UpdateInfo(int indexNo)
-        {
-            Console.WriteLine("whitch information do you want to update");
-            String upInfo=Console.ReadLine();
-            if (upInfo.Equals("name"))
-            {
-                Console.WriteLine("Enter new name :");
-                name[indexNo] =Console.ReadLine();
-            }
-            else if (upInfo.Equals("mobile"))
-            {
-                Console.WriteLine("Enter new mobile no :");
-                mobailNo[indexNo] = Console.ReadLine();
-
-            }
-            else if (upInfo.Equals("email"))
-            {
-                Console.WriteLine("Enter new Email ID :");
-                mail[indexNo] = Console.ReadLine();
-            }
-            else if (upInfo.Equals("add"))
-            {
-                Console.WriteLine("Enter new address :");
-                addresses[indexNo] = Console.ReadLine();
-            }
-
-        }
-        public int DeleteInfo(int indexNo)
-        {
-            name.RemoveAt(indexNo);
-            mobailNo.RemoveAt(indexNo);
-            mail.RemoveAt(indexNo);
-            addresses.RemoveAt(indexNo);
-            return 0;
+            this.FName = FName;
+            this.LName = LName;
+            this.MobileNO = MobileNo;
+            this.MailID = MailID;
+            this.City = City;
+            this.State = State;
+            this.ZipCode = ZipCode;
         }
     }
 }

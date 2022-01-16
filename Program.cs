@@ -8,27 +8,61 @@ namespace AddressBook
 {
     internal class Program
     {
-        static void Main(string[] args)
-        { 
-            PersonInfo personInfo= new PersonInfo();
-            personInfo.SetPersonInfo();
 
-            personInfo.DisplayPersonInfo();
+        static void Main(string[] args)
+        {
+            AddressBook personAdd = new AddressBook();
+            while (true)
+            {
+                Console.WriteLine("\n Enter Index Name :");
+                String IndexName = Console.ReadLine();
+
+                Console.WriteLine("\n Enter person First Name :");
+                String firstName = Console.ReadLine();
+
+                Console.WriteLine("\n Enter person Last Name :");
+                String lastName = Console.ReadLine();
+
+                Console.WriteLine("\n Enter person mobile number :");
+
+                long mobailNo = long.Parse(Console.ReadLine());
+
+                Console.WriteLine("\n Enter person Email ID :");
+                String mail = Console.ReadLine();
+
+                Console.WriteLine("\n Enter person City :");
+                String city = Console.ReadLine();
+
+                Console.WriteLine("\n Enter person State :");
+                String state = Console.ReadLine();
+
+                Console.WriteLine("\n Enter person Zip Code :");
+                long zipCode = long.Parse(Console.ReadLine());
+
+                PersonInfo personInfo = new PersonInfo(firstName, lastName, mobailNo, mail, city, state, zipCode);
+                personAdd.AddBook(IndexName, personInfo);
+
+                Console.WriteLine("\n you want add anathar person yes or no :");
+                String check = Console.ReadLine();
+                if (check.Equals("no"))
+                    break;
+
+            }
+
+            personAdd.DisplayAddressBook();
             Console.WriteLine("\n You want to update info ...!! type update or delete info");
-            String userDis=Console.ReadLine();
+            String userDis = Console.ReadLine();
             if (userDis.Equals("update"))
             {
-                Console.WriteLine("Enter Index no ");
-                int inNo=Int32.Parse(Console.ReadLine());
-                personInfo.UpdateInfo(inNo);
-                personInfo.DisplayPersonInfo();
+                personAdd.UpdateInfo();
+                personAdd.DisplayAddressBook();
             }
             else if (userDis.Equals("delete"))
             {
-                Console.WriteLine("Enter Index no ");
-                personInfo.DeleteInfo(Int32.Parse(Console.ReadLine()));
-                personInfo.DisplayPersonInfo();
+                personAdd.DeleteInfo();
+                personAdd.DisplayAddressBook();
             }
+
         }
     }
 }
