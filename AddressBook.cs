@@ -63,7 +63,7 @@ namespace AddressBook
 
             addressBook.Remove(check);
         }
-
+        //================= UC7 =================
         public bool CheckDuplicateInfo(PersonInfo personInfo)
         {
             foreach(PersonInfo info in addressBook.Values)
@@ -74,6 +74,19 @@ namespace AddressBook
                     return false;
             }
             return false;
+        }
+
+        //================ UC8 =================
+        public void SearchInCityORState()
+        {
+            Console.WriteLine("Enter city or state");
+            String search = Console.ReadLine();
+            foreach(PersonInfo info in addressBook.Values)
+            {
+                if (info.State.Equals(search) || info.City.Equals(search))
+                    Console.WriteLine("NAME : " + info.FName + "         LAST NAME :" + info.LName);
+               
+            }
         }
     }
 }

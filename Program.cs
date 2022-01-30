@@ -52,11 +52,11 @@ namespace AddressBook
                 Console.WriteLine("\n you want add anathar person yes or no :");
                 String check = Console.ReadLine();
                 if (check.Equals("no"))
-                    break;
+                    break;             
             }
 
             personAdd.DisplayAddressBook();
-            Console.WriteLine("\n You want to update info ...!! type update or delete info");
+            Console.WriteLine("\n You want to update info ...!! type update or delete info or search info");
             String userDis = Console.ReadLine();
             if (userDis.Equals("update"))
             {
@@ -67,6 +67,10 @@ namespace AddressBook
             {
                 personAdd.DeleteInfo();
                 personAdd.DisplayAddressBook();
+            }
+            else if (userDis.Equals("search"))             //UC-8
+            {
+                personAdd.SearchInCityORState();
             }
 
         }
