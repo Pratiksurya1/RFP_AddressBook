@@ -40,13 +40,19 @@ namespace AddressBook
                 long zipCode = long.Parse(Console.ReadLine());
 
                 PersonInfo personInfo = new PersonInfo(firstName, lastName, mobailNo, mail, city, state, zipCode);
-                personAdd.AddBook(IndexName, personInfo);
-
+                
+                if (personAdd.CheckDuplicateInfo(personInfo) != true)
+                {
+                    personAdd.AddBook(IndexName, personInfo);
+                    Console.WriteLine("Added successfully");
+                }
+                else
+                    Console.WriteLine("This person already present in the dictionary");
+                
                 Console.WriteLine("\n you want add anathar person yes or no :");
                 String check = Console.ReadLine();
                 if (check.Equals("no"))
                     break;
-
             }
 
             personAdd.DisplayAddressBook();

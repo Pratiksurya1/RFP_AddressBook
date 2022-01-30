@@ -10,7 +10,6 @@ namespace AddressBook
     public class AddressBook
     {
         public Dictionary<String, PersonInfo> addressBook = new Dictionary<string, PersonInfo>();
-        private Dictionary<string, PersonInfo>.KeyCollection keys;
 
         public void AddBook(String indexName, PersonInfo personObj)
         {
@@ -22,7 +21,6 @@ namespace AddressBook
             Console.WriteLine("\n ============= Person Information =============\n");
             foreach (KeyValuePair<string, PersonInfo> author in addressBook)
             {
-
                 Console.WriteLine(author.Key);
                 PersonInfo info = author.Value;
                 Console.WriteLine("NAME : " + info.FName + " LAST NAME : " + info.LName + " MOBILE NO : " + info.MobileNO + "EMAIL ID : " + info.MailID + " CITY : " + info.City + " STATE : " + info.State + "ZIP CODE : " + info.ZipCode);
@@ -56,6 +54,7 @@ namespace AddressBook
             Console.WriteLine("\n Enter person Zip Code :");
             info.ZipCode = long.Parse(Console.ReadLine());
         }
+
         public void DeleteInfo()
         {
             Console.WriteLine("Enter index name for delete :");
@@ -63,6 +62,18 @@ namespace AddressBook
             PersonInfo info = addressBook[check];
 
             addressBook.Remove(check);
+        }
+
+        public bool CheckDuplicateInfo(PersonInfo personInfo)
+        {
+            foreach(PersonInfo info in addressBook.Values)
+            {
+                if (info.FName.Equals(personInfo.FName))
+                    return true;    
+                else
+                    return false;
+            }
+            return false;
         }
     }
 }
