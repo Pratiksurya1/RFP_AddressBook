@@ -68,7 +68,7 @@ namespace AddressBook
                 personAdd.DeleteInfo();
                 personAdd.DisplayAddressBook();
             }
-            else if (userDis.Equals("search"))             //UC-8
+            else if (userDis.Equals("search"))             //UC-8 and Uc9
             {
                 personAdd.SearchInCityORState();
             }

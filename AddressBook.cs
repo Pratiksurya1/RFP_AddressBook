@@ -76,16 +76,17 @@ namespace AddressBook
             return false;
         }
 
-        //================ UC8 =================
+        //================ UC8 and UC9 =================
         public void SearchInCityORState()
         {
             Console.WriteLine("Enter city or state");
             String search = Console.ReadLine();
+
+            Console.WriteLine("This person form "+search);
             foreach(PersonInfo info in addressBook.Values)
             {
                 if (info.State.Equals(search) || info.City.Equals(search))
-                    Console.WriteLine("NAME : " + info.FName + "         LAST NAME :" + info.LName);
-               
+                    Console.WriteLine("NAME : " + info.FName + "         LAST NAME : " + info.LName);   
             }
         }
     }
