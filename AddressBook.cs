@@ -89,5 +89,20 @@ namespace AddressBook
                     Console.WriteLine("NAME : " + info.FName + "         LAST NAME : " + info.LName);   
             }
         }
+        //================== UC10 ===============
+        public void SearchCountCityORState()
+        {
+            Console.WriteLine("Enter city or state");
+            String search = Console.ReadLine();
+            int count = 0;
+
+            Console.WriteLine("This person form " + search);
+            foreach (PersonInfo info in addressBook.Values)
+            {
+                if (info.State.Equals(search) || info.City.Equals(search))
+                    count++;
+            }
+            Console.WriteLine(count +" person in "+search);
+        }
     }
 }

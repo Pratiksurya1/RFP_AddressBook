@@ -56,7 +56,7 @@ namespace AddressBook
             }
 
             personAdd.DisplayAddressBook();
-            Console.WriteLine("\n You want to update info ...!! type update or delete info or search info");
+            Console.WriteLine("\n You want to update info ...!! type \n update \n delete info \n search info \n search count");
             String userDis = Console.ReadLine();
             if (userDis.Equals("update"))
             {
@@ -72,6 +72,8 @@ namespace AddressBook
             {
                 personAdd.SearchInCityORState();
             }
+            else if(userDis.Equals("search count"))
+                personAdd.SearchCountCityORState();
 
         }
     }
