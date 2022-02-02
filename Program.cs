@@ -8,7 +8,6 @@ namespace AddressBook
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
             AddressBook personAdd = new AddressBook();
@@ -78,6 +77,9 @@ namespace AddressBook
 
             //Uc11
             personAdd.ToString();
+
+            personAdd.FileWriter();
+
 
 
         }
