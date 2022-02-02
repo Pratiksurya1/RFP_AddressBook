@@ -105,14 +105,36 @@ namespace AddressBook
             Console.WriteLine(count +" person in "+search);
         }
         //=============== Uc11 ================
-
         public override String ToString()
         {
-            foreach (KeyValuePair<String, PersonInfo> value in addressBook.OrderBy(key => key.Value.FName))
+            foreach (KeyValuePair<String, PersonInfo> info in addressBook.OrderBy(key => key.Value.FName))
             {
-                Console.WriteLine(value.Key + "\t\t" + value.Value.FName);
+                Console.WriteLine(info.Key + "\t\t" + info.Value.FName);
             }
-            return " ";
+            return "";
+        }
+
+        // ============= Uc12 ==============
+        public void SortedAddressBook()
+        {
+
+            Console.WriteLine("Sort by City");
+            foreach (KeyValuePair<String, PersonInfo> info in addressBook.OrderBy(key => key.Value.City))
+            {
+                Console.WriteLine(info.Key + "\t\t" + info.Value.FName);
+            }
+
+            Console.WriteLine("Sort by State");
+            foreach (KeyValuePair<String, PersonInfo> info in addressBook.OrderBy(key => key.Value.State))
+            {
+                Console.WriteLine(info.Key + "\t\t" + info.Value.FName);
+            }
+
+            Console.WriteLine("Sort by zipcode");
+            foreach (KeyValuePair<String, PersonInfo> info in addressBook.OrderBy(key => key.Value.ZipCode))
+            {
+                Console.WriteLine(info.Key + "\t\t" + info.Value.FName);
+            }
         }
     }
 }
