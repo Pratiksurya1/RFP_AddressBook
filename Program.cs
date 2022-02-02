@@ -24,9 +24,8 @@ namespace AddressBook
                 String lastName = Console.ReadLine();
 
                 Console.WriteLine("\n Enter person mobile number :");
-
                 long mobailNo = long.Parse(Console.ReadLine());
-                 
+
                 Console.WriteLine("\n Enter person Email ID :");
                 String mail = Console.ReadLine();
 
@@ -40,7 +39,7 @@ namespace AddressBook
                 long zipCode = long.Parse(Console.ReadLine());
 
                 PersonInfo personInfo = new PersonInfo(firstName, lastName, mobailNo, mail, city, state, zipCode);
-                
+
                 if (personAdd.CheckDuplicateInfo(personInfo) != true)
                 {
                     personAdd.AddBook(IndexName, personInfo);
@@ -48,11 +47,11 @@ namespace AddressBook
                 }
                 else
                     Console.WriteLine("This person already present in the dictionary");
-                
+
                 Console.WriteLine("\n you want add anathar person yes or no :");
                 String check = Console.ReadLine();
                 if (check.Equals("no"))
-                    break;             
+                    break;
             }
 
             personAdd.DisplayAddressBook();
@@ -72,9 +71,12 @@ namespace AddressBook
             {
                 personAdd.SearchInCityORState();
             }
-            else if(userDis.Equals("search count"))
+            else if (userDis.Equals("search count"))    //UC10
                 personAdd.SearchCountCityORState();
+            else
+                Console.WriteLine("Value not found");
 
+            personAdd.ToString();
         }
     }
 }

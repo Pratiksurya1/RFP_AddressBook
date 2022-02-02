@@ -104,5 +104,15 @@ namespace AddressBook
             }
             Console.WriteLine(count +" person in "+search);
         }
+        //=============== Uc11 ================
+
+        public override String ToString()
+        {
+            foreach (KeyValuePair<String, PersonInfo> value in addressBook.OrderBy(key => key.Value.FName))
+            {
+                Console.WriteLine(value.Key + "\t\t" + value.Value.FName);
+            }
+            return " ";
+        }
     }
 }
