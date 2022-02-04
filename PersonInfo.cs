@@ -10,23 +10,28 @@ namespace AddressBook
     public class PersonInfo
     {
 
-        public String FName;
-        public String LName;
-        public long MobileNO;
-        public String MailID;
-        public String City;
-        public String State;
-        public long ZipCode;
+        public String FName { get; set; }
+        public String LName { get; set; }
+        public long MobileNO { get; set; }
+        public String MailID { get; set; }
+        public String City { get; set; }
+        public String State { get; set; }
+        public long ZipCode { get; set; }
 
-        public PersonInfo(String FName, String LName, long MobileNo, String MailID, String City, String State, long ZipCode)
+        public object ToList()
         {
-            this.FName = FName;
-            this.LName = LName;
-            this.MobileNO = MobileNo;
-            this.MailID = MailID;
-            this.City = City;
-            this.State = State;
-            this.ZipCode = ZipCode;
+            throw new NotImplementedException();
         }
+
+        //public PersonInfo(String FName, String LName, long MobileNo, String MailID, String City, String State, long ZipCode)
+        //{
+        //    this.FName = FName;
+        //    this.LName = LName;
+        //    this.MobileNO = MobileNo;
+        //    this.MailID = MailID;
+        //    this.City = City;
+        //    this.State = State;
+        //    this.ZipCode = ZipCode;
+        //}
     }
 }

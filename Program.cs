@@ -11,6 +11,7 @@ namespace AddressBook
         static void Main(string[] args)
         {
             AddressBook personAdd = new AddressBook();
+            personAdd.CsvReader();
             while (true)
             {
                 Console.WriteLine("\n Enter Index Name :");
@@ -66,19 +67,18 @@ namespace AddressBook
                 personAdd.DeleteInfo();
                 personAdd.DisplayAddressBook();
             }
-            else if (userDis.Equals("search"))             //UC-8 and Uc9
+            else if (userDis.Equals("search"))             
             {
                 personAdd.SearchInCityORState();
             }
-            else if (userDis.Equals("search count"))    //UC10
+            else if (userDis.Equals("search count"))    
                 personAdd.SearchCountCityORState();
             else
                 Console.WriteLine("Value not found");
 
-            //Uc11
-            personAdd.ToString();
-
-            personAdd.FileWriter();
+            personAdd.ToString();  
+      
+            personAdd.txtFileWriter();
 
 
 

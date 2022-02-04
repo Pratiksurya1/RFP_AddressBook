@@ -1,13 +1,15 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AddressBook
 {
-    public class AddressBook
+    public class AddressBook:ReadORWrite
     {
         public Dictionary<String, PersonInfo> addressBook = new Dictionary<string, PersonInfo>();
 
@@ -135,21 +137,7 @@ namespace AddressBook
             {
                 Console.WriteLine(info.Key + "\t\t" + info.Value.FName);
             }
-            
-        }
-        
-        //============= Uc13============
 
-        public void FileWriter()
-        {
-            String path = "D:/.Net/C#/AddressBook/AddressBook.txt";
-            using (StreamWriter sw = new StreamWriter(path))
-            {
-                foreach (KeyValuePair<String, PersonInfo> info in addressBook)
-                {
-                    sw.WriteLine(info.Value.FName+"\t"+info.Value.LName+"\t"+info.Value.MobileNO+"\t"+info.Value.MailID+"\t"+info.Value.City+"\t"+info.Value.State+"\t"+info.Value.ZipCode);
-                }
-            }
         }
     }
 }
