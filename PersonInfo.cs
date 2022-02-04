@@ -18,10 +18,6 @@ namespace AddressBook
         public String State { get; set; }
         public long ZipCode { get; set; }
 
-        public object ToList()
-        {
-            throw new NotImplementedException();
-        }
 
         //public PersonInfo(String FName, String LName, long MobileNo, String MailID, String City, String State, long ZipCode)
         //{
