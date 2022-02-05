@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AddressBook
 {
-    public class AddressBook:ReadORWrite
+    public class AddressBook
     {
         public Dictionary<String, PersonInfo> addressBook = new Dictionary<string, PersonInfo>();
 
@@ -137,7 +138,6 @@ namespace AddressBook
             {
                 Console.WriteLine(info.Key + "\t\t" + info.Value.FName);
             }
-
-        }
+        } 
     }
 }

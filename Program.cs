@@ -10,8 +10,8 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            AddressBook personAdd = new AddressBook();
-            personAdd.CsvReader();
+            ReadORWrite personAdd = new ReadORWrite();
+           
             while (true)
             {
                 Console.WriteLine("\n Enter Index Name :");
@@ -80,8 +80,7 @@ namespace AddressBook
       
             personAdd.txtFileWriter();
 
-
-
+            personAdd.JsonFileWriter();
         }
     }
 }
